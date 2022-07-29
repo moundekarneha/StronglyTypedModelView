@@ -1,0 +1,26 @@
+﻿@model IEnumerable<StronglyTypedModelView.Models.Product>
+
+<h2>Product lists</h2>
+
+<table width="400" border="1">
+    <th>Id</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>View Details</th>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Pid</td>
+            <td>@item.Name</td>
+            <td>@item.Price</td>
+            <td>@Html.ActionLink("Details", "Index", new {item.Pid})</td>
+
+        </tr>
+    }
+
+</table>
+<br />
+@Html.ActionLink("Index1", "Index1");
+
+
+
